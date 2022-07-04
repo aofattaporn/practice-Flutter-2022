@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './test_stateless/nomal_bars.dart';
 import 'package:flutter/material.dart';
 import './interact/interact.dart';
+import 'Layout/test_column.dart';
 
 void main() {
   runApp(
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       // home: NomalBars(),
       home: Scaffold(
         appBar: AppBar(),
-        body: ParentWidget(),
+        body: column_picture(),
       ),
     );
   }
