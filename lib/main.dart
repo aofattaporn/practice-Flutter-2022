@@ -1,7 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import './test_stateless/nomal_bars.dart';
-import 'package:flutter/material.dart';
-import './interact/interact.dart';
+
 import 'Layout/test_column.dart';
 
 void main() {
