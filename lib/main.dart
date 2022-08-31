@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'Layout/test_column.dart';
+import 'package:test_flutter/Layout/screen_layout.dart';
 
 void main() {
   runApp(
@@ -20,7 +18,7 @@ class MyApp extends StatelessWidget {
       // home: NomalBars(),
       home: Scaffold(
         appBar: AppBar(),
-        body: column_picture(),
+        body: MyScreenLayout(),
       ),
     );
   }
