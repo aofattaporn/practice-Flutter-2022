@@ -17,9 +17,20 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       // home: NomalBars(),
       home: Scaffold(
-        appBar: AppBar(),
-        body: MyScreenLayout(),
-      ),
+          appBar: AppBar(),
+          body: MyScreenLayout(),
+          bottomNavigationBar: BottomNavigationBar(
+            items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.access_alarm), label: "Test"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.access_alarm), label: "Test"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.access_alarm), label: "Test")
+            ],
+            selectedItemColor: Colors.amber,
+
+          )),
     );
   }
 }
