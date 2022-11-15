@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rive/rive.dart';
 
 class MyScreenLayout extends StatelessWidget {
   const MyScreenLayout({Key? key}) : super(key: key);
@@ -9,16 +10,19 @@ class MyScreenLayout extends StatelessWidget {
     return ListView(
       children: [
         header(),
-        rowLearning(),
-        columnLearning(),
-        columnLearning(),
-        columnLearning(),
-        columnLearning(),
-        columnLearning()
+        // rowLearning(),
+        const RiveAnimation.file('assets/image/bear_avatar_remix.rev'),
+        const RiveAnimation.asset('assets/image/bear_avatar_remix.rev'),
 
+        Image.asset('assets/image/cat.jpg')
+
+        // columnLearning(),
+        // columnLearning(),
+        // columnLearning(),
+        // columnLearning(),
+        // columnLearning()
       ],
     );
-
   }
 
   Row header() {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/Layout/screen_layout.dart';
+
+import 'RevTest/PlayOneShotAnimetion.dart';
 
 void main() {
   runApp(
@@ -16,21 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       // home: NomalBars(),
-      home: Scaffold(
-          appBar: AppBar(),
-          body: MyScreenLayout(),
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.access_alarm), label: "Test"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.access_alarm), label: "Test"),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.access_alarm), label: "Test")
-            ],
-            selectedItemColor: Colors.amber,
-
-          )),
+      home: Scaffold(appBar: AppBar(), body: const PlayOneShotAnimation()),
     );
   }
 }
