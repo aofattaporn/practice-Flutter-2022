@@ -29,7 +29,7 @@ class MyScreenLayout extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: const [
-        Text("Layout Information",
+        Text("learing.Layout Information",
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
       ],
     );
