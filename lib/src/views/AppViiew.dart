@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../blocs/counter/CounterEvent.dart';
+import '../blocs/CounterBloc.dart';
 import '../screens/CounterScreen.dart';
-
 
 /// {@template app_view}
 /// A [StatelessWidget] that:
@@ -21,8 +20,9 @@ class AppView extends StatelessWidget {
     return BlocBuilder<ThemeCubit, ThemeData>(
       builder: (_, theme) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: theme,
-          home: const CounterPage(),
+          // home: const CounterPage(),
         );
       },
     );

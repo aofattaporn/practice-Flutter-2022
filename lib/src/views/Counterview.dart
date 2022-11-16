@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../blocs/counter/CounterEvent.dart';
+import '../blocs/CounterBloc.dart';
 
 /// {@template counter_view}
 /// A [StatelessWidget] that:
@@ -15,7 +15,7 @@ class CounterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Counter')),
+      appBar: AppBar(title: const Text('xxxxx')),
       body: Center(
         child: BlocBuilder<CounterBloc, int>(
           builder: (context, count) {
@@ -38,6 +38,13 @@ class CounterView extends StatelessWidget {
             child: const Icon(Icons.remove),
             onPressed: () {
               context.read<CounterBloc>().add(CounterDecrementPressed());
+            },
+          ),
+          const SizedBox(height: 4),
+          FloatingActionButton(
+            child: const Icon(Icons.reset_tv),
+            onPressed: () {
+              context.read<CounterBloc>().add(CounterResetPressed());
             },
           ),
           const SizedBox(height: 4),

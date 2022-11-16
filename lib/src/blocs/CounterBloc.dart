@@ -4,26 +4,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 /// Event being processed by [CounterBloc].
 abstract class CounterEvent {}
 
-/// Notifies bloc to increment state.
 class CounterIncrementPressed extends CounterEvent {}
 
-/// Notifies bloc to decrement state.
 class CounterDecrementPressed extends CounterEvent {}
 
-/// {@template counter_bloc}
-/// A simple [Bloc] that manages an `int` as its state.
-/// {@endtemplate}
+class CounterResetPressed extends CounterEvent {}
+
 class CounterBloc extends Bloc<CounterEvent, int> {
-  /// {@macro counter_bloc}
   CounterBloc() : super(0) {
     on<CounterIncrementPressed>((event, emit) => emit(state + 1));
-    on<CounterDecrementPressed>((event, emit) => emit(state - 1));
+
+    /// business logic
+    on<CounterDecrementPressed>((event, emit) => {
+          if (state <= 0) {emit(state)} else {emit(state - 1)}
+        });
+    on<CounterResetPressed>((event, emit) => emit(0));
   }
 }
 
-/// {@template brightness_cubit}
-/// A simple [Cubit] that manages the [ThemeData] as its state.
-/// {@endtemplate}
 class ThemeCubit extends Cubit<ThemeData> {
   /// {@macro brightness_cubit}
   ThemeCubit() : super(_lightTheme);
