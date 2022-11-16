@@ -1,22 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:test_flutter/src/ui/ArticleListScreen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-bool shouldUseFirestoreEmulator = false;
+import 'App.dart';
 
-Future<void> main() async {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+/// Custom [BlocObserver] that observes all bloc and cubit state changes.
+class AppBlocObserver extends BlocObserver {
+  @override
+  void onChange(BlocBase bloc, Change change) {
+    super.onChange(bloc, change);
+    if (bloc is Cubit) print(change);
+  }
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
-      // home: NomalBars(),
-      home: const ArticleListScreen()
-    );
+  void onTransition(Bloc bloc, Transition transition) {
+    super.onTransition(bloc, transition);
+    print(transition);
   }
+}
+
+void main() {
+  /// custom observer for check log on state
+  Bloc.observer = AppBlocObserver();
+  runApp(const App());
 }
