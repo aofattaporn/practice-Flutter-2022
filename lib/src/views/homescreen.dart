@@ -10,6 +10,8 @@ import '../models/Navigation_state.dart';
 import '../screens/HomeScreen.dart';
 
 class RootScreen extends StatefulWidget {
+  const RootScreen({Key? key}) : super(key: key);
+
   @override
   _RootScreenState createState() => _RootScreenState();
 }
@@ -29,30 +31,15 @@ class _RootScreenState extends State<RootScreen> {
           ),
 
           /// manage bottomNavigationBar
-          bottomNavigationBar: BlocBuilder<NavigationBloc, NavigationState>(
+          bottomNavigationBar: BlocBuilder<NavigationBloc, NavigationModel>(
             builder: (context, state) {
               return BottomNavigationBar(
                 currentIndex: state.index,
                 showUnselectedLabels: false,
-                items: const [
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.home,
-                    ),
-                    label: 'Home',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.settings,
-                    ),
-                    label: 'Settings',
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.person,
-                    ),
-                    label: 'Profile',
-                  ),
+                items: [
+                  NavigationItem(const Icon(Icons.home), "home"),
+                  NavigationItem(const Icon(Icons.settings), "Settings"),
+                  NavigationItem(const Icon(Icons.person), "Profile"),
                 ],
                 selectedItemColor: Colors.lightBlue[100],
                 onTap: (index) {
@@ -71,7 +58,7 @@ class _RootScreenState extends State<RootScreen> {
 
           /// manage body
           body: Container(
-            child: BlocBuilder<NavigationBloc, NavigationState>(
+            child: BlocBuilder<NavigationBloc, NavigationModel>(
                 builder: (context, state) {
               if (state.navbarItem == NavbarItem.home) {
                 return const HomeScrreen();
@@ -85,6 +72,13 @@ class _RootScreenState extends State<RootScreen> {
           ),
         ),
       ),
+    );
+  }
+
+  BottomNavigationBarItem NavigationItem(Icon icon, String title) {
+    return BottomNavigationBarItem(
+      icon: icon,
+      label: title,
     );
   }
 }

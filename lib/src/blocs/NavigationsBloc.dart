@@ -14,14 +14,14 @@ class SettingsScreenPressed extends NavigationEvent {}
 class ProfileScreenPressed extends NavigationEvent {}
 
 /// navigationBloc
-class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
-  NavigationBloc() : super(NavigationState(NavbarItem.home, 0)) {
+class NavigationBloc extends Bloc<NavigationEvent, NavigationModel> {
+  NavigationBloc() : super(NavigationModel(NavbarItem.home, 0)) {
     on<HomeScreenPressed>(
-        (event, emit) => {emit(NavigationState(NavbarItem.home, 0))});
+        (event, emit) => {emit(NavigationModel(NavbarItem.home, 0))});
 
     on<SettingsScreenPressed>(
-        (event, emit) => {emit(NavigationState(NavbarItem.settings, 1))});
+        (event, emit) => {emit(NavigationModel(NavbarItem.settings, 1))});
     on<ProfileScreenPressed>(
-        (event, emit) => {emit(NavigationState(NavbarItem.profile, 2))});
+        (event, emit) => {emit(NavigationModel(NavbarItem.profile, 2))});
   }
 }
