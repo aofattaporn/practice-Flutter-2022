@@ -2,7 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../blocs/CounterBloc.dart';
+import '../blocs/HomePage/CounterBloc.dart';
+import '../blocs/HomePage/ThemeBloc.dart';
 
 /// {@template counter_view}
 /// A [StatelessWidget] that:

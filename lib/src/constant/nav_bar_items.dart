@@ -1,3 +1,1 @@
-
-
-enum NavbarItem { home, settings, profile }
+enum NavbarItem { home, settings, searching, creating, notification, profile }
