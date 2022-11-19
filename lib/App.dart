@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_flutter/src/blocs/HomePage/CounterBloc.dart';
 import 'package:test_flutter/src/blocs/NavigationsBloc.dart';
+import 'package:test_flutter/src/blocs/ProfilePage/covidBloc/covidBloc.dart';
 import 'package:test_flutter/src/ui/homescreen.dart';
 
 class App extends StatelessWidget {
@@ -15,7 +16,8 @@ class App extends StatelessWidget {
         create: (BuildContext context) => CounterBloc(),
       ),
       BlocProvider<NavigationBloc>(
-          create: (BuildContext context) => NavigationBloc())
+          create: (BuildContext context) => NavigationBloc()),
+      BlocProvider<CovidBloc>(create: (BuildContext context) => CovidBloc()),
     ], child: const BottomNaviation());
   }
 }
