@@ -26,6 +26,12 @@ class _BottomNaviationState extends State<BottomNaviation> {
         /// manage app bar
         appBar: AppBar(),
 
+        // floatingActionButton: FloatingActionButton(
+        //   child: Icon(Icons.add),
+        //   onPressed: (){},
+        // ),
+        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
         /// manage bottomNavigationBar
         bottomNavigationBar: BlocBuilder<NavigationBloc, NavigationModel>(
           builder: (context, state) {
@@ -35,6 +41,13 @@ class _BottomNaviationState extends State<BottomNaviation> {
               items: [
                 NavigationItem(const Icon(Icons.home, color: Color.fromARGB(186, 10, 69, 100), size: 32), "home"),
                 NavigationItem(const Icon(Icons.search), "search"),
+                BottomNavigationBarItem(icon: Container(
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.orange,
+                  ),
+                  child: const Icon(Icons.add, size: 40),
+                ),label:  ""),
                 NavigationItem(const Icon(Icons.notifications), "Notification"),
                 NavigationItem(const Icon(Icons.person), "Profile"),
               ],
