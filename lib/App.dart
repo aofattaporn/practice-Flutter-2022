@@ -10,14 +10,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    /// dependency injection
+    final NavigationBloc _navigationBloc = NavigationBloc();
+
     /// คลุมทั้งหมดโดยการใช้ blocProvider เพื่อส่ง bloc
     return MultiBlocProvider(providers: [
       BlocProvider<CounterBloc>(
         create: (BuildContext context) => CounterBloc(),
       ),
       BlocProvider<NavigationBloc>(
-          create: (BuildContext context) => NavigationBloc()),
-      BlocProvider<CovidBloc>(create: (BuildContext context) => CovidBloc()),
+          create:  (_)=> _navigationBloc),
+      // BlocProvider<CovidBloc>(create: (BuildContext context) => CovidBloc()),
     ], child: const BottomNaviation());
   }
 }

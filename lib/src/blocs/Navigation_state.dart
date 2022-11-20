@@ -1,6 +1,8 @@
+import 'package:equatable/equatable.dart';
+
 import '../constant/nav_bar_items.dart';
 
-class NavigationModel {
+class NavigationModel extends Equatable {
   final NavbarItem navbarItem;
   final int index;
 

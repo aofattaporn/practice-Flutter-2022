@@ -9,6 +9,8 @@ import 'package:bloc/bloc.dart';
 
 class CovidBloc extends Bloc<CovidEvent, CovidState> {
   CovidBloc() : super(CovidInitial()) {
+
+    /// dependency injection
     final ApiRepository _apiRepository = ApiRepository();
 
     on<GetCovidList>((event, emit) async {

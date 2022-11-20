@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_flutter/src/screens/ProfileScreen.dart';
 import 'package:test_flutter/src/screens/SettingScreen.dart';
 
+import '../blocs/Navigation_state.dart';
 import '../blocs/NavigationsBloc.dart';
 import '../constant/nav_bar_items.dart';
-import '../models/Navigation_state.dart';
 import '../screens/HomeScreen.dart';
 
 class BottomNaviation extends StatefulWidget {
@@ -33,7 +33,7 @@ class _BottomNaviationState extends State<BottomNaviation> {
               currentIndex: state.index,
               showUnselectedLabels: false,
               items: [
-                NavigationItem(const Icon(Icons.home), "home"),
+                NavigationItem(const Icon(Icons.home, color: Color.fromARGB(186, 10, 69, 100), size: 32), "home"),
                 NavigationItem(const Icon(Icons.search), "search"),
                 NavigationItem(const Icon(Icons.notifications), "Notification"),
                 NavigationItem(const Icon(Icons.person), "Profile"),
@@ -71,8 +71,6 @@ class _BottomNaviationState extends State<BottomNaviation> {
       ),
     );
   }
-
-
 
   BottomNavigationBarItem NavigationItem(Icon icon, String title) {
     return BottomNavigationBarItem(

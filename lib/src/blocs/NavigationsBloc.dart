@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../constant/nav_bar_items.dart';
-import '../models/Navigation_state.dart';
+import 'Navigation_state.dart';
 
 /// Event being processed by [CounterBloc].
 abstract class NavigationEvent {}
