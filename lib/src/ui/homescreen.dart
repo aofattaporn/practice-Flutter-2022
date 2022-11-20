@@ -72,6 +72,8 @@ class _BottomNaviationState extends State<BottomNaviation> {
     );
   }
 
+
+
   BottomNavigationBarItem NavigationItem(Icon icon, String title) {
     return BottomNavigationBarItem(
       icon: icon,

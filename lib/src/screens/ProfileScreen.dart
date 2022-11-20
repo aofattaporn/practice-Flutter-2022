@@ -6,14 +6,13 @@ import 'package:test_flutter/src/blocs/ProfilePage/covidBloc/covidState.dart';
 
 import '../data/model/CovidModel.dart';
 
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(8.0),
       child: BlocProvider(
         create: (_) => CovidBloc(),
         child: BlocListener<CovidBloc, CovidState>(
@@ -46,24 +45,25 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-Widget _buildCard(BuildContext context, CovidModel model) {
-  return ListView.builder(
-    itemBuilder: (context, index) {
-      return Container(
-        margin: EdgeInsets.all(8.0),
-        child: Card(
-          child: Container(
-            margin: EdgeInsets.all(8.0),
-            child: Column(
-              children: <Widget>[
-                Text("Msg: ${model.message}"),
-              ],
+  Widget _buildCard(BuildContext context, CovidModel model) {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Container(
+          margin: const EdgeInsets.all(8.0),
+          child: Card(
+            child: Container(
+              margin: const EdgeInsets.all(8.0),
+              child: Column(
+                children: <Widget>[
+                  Text("Msg: ${model.message}"),
+                ],
+              ),
             ),
           ),
-        ),
-      );
-    },
-  );
-}
+        );
+      },
+    );
+  }
 
-Widget _buildLoading() => Center(child: CircularProgressIndicator());}
+  Widget _buildLoading() => const Center(child: CircularProgressIndicator());
+}
