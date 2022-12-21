@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'App.dart';
+import 'App2.dart';
 
 /// Custom [BlocObserver] that observes all bloc and cubit state changes.
 class AppBlocObserver extends BlocObserver {
@@ -21,5 +22,5 @@ class AppBlocObserver extends BlocObserver {
 void main() {
   /// custom observer for check log on state
   // Bloc.observer = AppBlocObserver();
-  runApp(const App());
+  runApp(const App2());
 }
