@@ -24,13 +24,7 @@ class _BottomNaviationState extends State<BottomNaviation> {
       theme: ThemeData.dark(),
       home: Scaffold(
         /// manage app bar
-        appBar: AppBar(),
-
-        // floatingActionButton: FloatingActionButton(
-        //   child: Icon(Icons.add),
-        //   onPressed: (){},
-        // ),
-        // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        // appBar: AppBar(),
 
         /// manage bottomNavigationBar
         bottomNavigationBar: BlocBuilder<NavigationBloc, NavigationModel>(

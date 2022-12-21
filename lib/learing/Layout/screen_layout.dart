@@ -9,10 +9,10 @@ class MyScreenLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        header(),
+        // header(),
         // rowLearning(),
-        const RiveAnimation.file('assets/image/bear_avatar_remix.rev'),
-        const RiveAnimation.asset('assets/image/bear_avatar_remix.rev'),
+        // const RiveAnimation.file('assets/image/bear_avatar_remix.rev'),
+        // const RiveAnimation.asset('assets/image/bear_avatar_remix.rev'),
 
         Image.asset('assets/image/cat.jpg')
 
@@ -30,6 +30,7 @@ class MyScreenLayout extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: const [
         Text("learing.Layout Information",
+            textDirection: TextDirection.ltr,
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
       ],
     );
