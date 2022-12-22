@@ -22,5 +22,5 @@ class AppBlocObserver extends BlocObserver {
 void main() {
   /// custom observer for check log on state
   // Bloc.observer = AppBlocObserver();
-  runApp(const App());
+  runApp(const App2());
 }
