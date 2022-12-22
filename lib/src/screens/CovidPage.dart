@@ -37,18 +37,21 @@ class _CovidPageState extends State<CovidPage> {
       margin: const EdgeInsets.all(8.0),
       child: BlocProvider(
         create: (_) => _newsBloc,
-        child: BlocListener<CovidBloc, CovidState>(
-          /// use BlocListener for check initail state
-          listener: (context, state) {
-            if (state is CovidError) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(state.message!),
-                ),
-              );
-            }
-          },
-          child: BlocBuilder<CovidBloc, CovidState>(
+        child:
+        // BlocListener<CovidBloc, CovidState>(
+        //   /// use BlocListener for check initail state
+        //   listener: (context, state) {
+        //     if (state is CovidError) {
+        //       ScaffoldMessenger.of(context).showSnackBar(
+        //         SnackBar(
+        //           content: Text(state.message!),
+        //         ),
+        //       );
+        //     }
+        //   },
+        //   child:
+
+          BlocBuilder<CovidBloc, CovidState>(
             builder: (context, state) {
               if (state is CovidInitial) {
                 return _buildLoading();
@@ -64,7 +67,7 @@ class _CovidPageState extends State<CovidPage> {
             },
           ),
         ),
-      ),
+      // ),
     );
   }
 

@@ -31,6 +31,7 @@ class ApiProvider {
   Future<CovidModel> fetchCovidList() async {
     try {
       Response response = await _dio.get(_url);
+      print("sdfsdfsdfdsff");
       return CovidModel.fromJson(response.data);
     } catch (error, stacktrace) {
       print("Exception occured: $error stackTrace: $stacktrace");
