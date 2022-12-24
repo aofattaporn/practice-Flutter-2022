@@ -14,18 +14,18 @@ class _HompState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       /// Appbar
-      appBar: ,
+      // appBar: ,
 
 
       /// body
 
 
       /// navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   items: [
+      //     // BottomNavigationBarItem
+      //   ],
+      // ),
     );
   }
 }

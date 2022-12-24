@@ -5,8 +5,10 @@ import 'package:test_flutter/src2/screens/Home_page.dart';
 import 'package:test_flutter/src2/screens/Notification_page.dart';
 import 'package:test_flutter/src2/screens/Profile_page.dart';
 import 'package:test_flutter/src2/screens/Search_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../src/screens/CovidPage.dart';
+import 'blocs/counter/counter_event.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
   const BottomNavigationWidget({Key? key}) : super(key: key);
@@ -16,7 +18,8 @@ class BottomNavigationWidget extends StatefulWidget {
 }
 
 class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
-
+  // child: BlocProvider(
+  // create: (_) => CounterBloc2(),
 
   int currentTab = 0;
   final List<Widget> screens = [
@@ -30,22 +33,20 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = Profile_page();
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       /// AppBar
-      // appBar: AppBar(),
-      // body: Container(
-      //   color: Colors.black38,
-      //   child: Text("Hello world"),
-      // ),
 
       /// body
-      body: PageStorage(
-        bucket: bucket,
-        child: currentScreen,
-      ),
+      body: Center(
+          child: BlocProvider(
+        create: (_) => CounterBloc2(),
+        child: PageStorage(
+          bucket: bucket,
+          child: currentScreen,
+        ),
+      )),
 
       /// FAB
       floatingActionButton: FloatingActionButton(
@@ -106,7 +107,6 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           ),
         ),
       ),
-
     );
   }
 }

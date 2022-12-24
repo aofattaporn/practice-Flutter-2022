@@ -28,10 +28,11 @@ class HomeScrreen extends StatelessWidget {
                     onPressed: () {
                       context
                           .read<CounterBloc>()
-                          .add(CounterIncrementPressed());
+                          .add(CounterDecrementPressed());
                     },
-                    child: const Center(child: Icon(Icons.exposure_plus_1))),
+                    child: const Center(child: Icon(Icons.exposure_plus_1, color: Colors.lightBlue))),
                 const SizedBox(width: 10),
+
                 FloatingActionButton(
                     onPressed: () {
                       context
@@ -40,6 +41,7 @@ class HomeScrreen extends StatelessWidget {
                     },
                     child: const Center(child: Icon(Icons.exposure_minus_1))),
                 const SizedBox(width: 10),
+
                 FloatingActionButton(
                     onPressed: () {
                       context.read<CounterBloc>().add(CounterResetPressed());
