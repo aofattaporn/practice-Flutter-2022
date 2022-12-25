@@ -40,14 +40,16 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
 
       /// body
       body: Center(
-        child: BlocProvider(
-          create: (_) => CounterBloc2(),
+        child: MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_)=> CounterBloc2())
+          ],
           child: PageStorage(
-            bucket: bucket,
-            child: currentScreen,
+              bucket: bucket,
+              child: currentScreen,
+            ),
           ),
         ),
-      ),
 
       /// FAB
       floatingActionButton: FloatingActionButton(
