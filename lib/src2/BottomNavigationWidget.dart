@@ -36,20 +36,16 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     /// injection covidBloc
 
     return Scaffold(
-      /// AppBar
-
       /// body
       body: Center(
         child: MultiBlocProvider(
-          providers: [
-            BlocProvider(create: (_)=> CounterBloc2())
-          ],
+          providers: [BlocProvider(create: (_) => CounterBloc2())],
           child: PageStorage(
-              bucket: bucket,
-              child: currentScreen,
-            ),
+            bucket: bucket,
+            child: currentScreen,
           ),
         ),
+      ),
 
       /// FAB
       floatingActionButton: FloatingActionButton(
@@ -68,42 +64,14 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             children: [
               Row(
                 children: [
-                  MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentScreen = screens[0];
-                          currentTab = 0;
-                        });
-                      },
-                      child: Icon(Icons.home, size: 24)),
-                  MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentScreen = screens[1];
-                          currentTab = 1;
-                        });
-                      },
-                      child: Icon(Icons.search, size: 24))
+                  Button_Page(0, const Icon(Icons.home)),
+                  Button_Page(1, const Icon(Icons.search)),
                 ],
               ),
               Row(
                 children: [
-                  MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentScreen = Notification_page();
-                          currentTab == 2 ? Colors.amber : Colors.black38;
-                        });
-                      },
-                      child: Icon(Icons.notifications, size: 24)),
-                  MaterialButton(
-                      onPressed: () {
-                        setState(() {
-                          currentScreen = Profile_page();
-                          currentTab == 3 ? Colors.amber : Colors.black38;
-                        });
-                      },
-                      child: Icon(Icons.person, size: 24))
+                  Button_Page(2, const Icon(Icons.notifications)),
+                  Button_Page(3, const Icon(Icons.person)),
                 ],
               )
             ],
@@ -111,5 +79,16 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
         ),
       ),
     );
+  }
+
+  MaterialButton Button_Page(int indexSceeen, Widget xicon) {
+    return MaterialButton(
+        onPressed: () {
+          setState(() {
+            currentScreen = screens[indexSceeen];
+            currentTab = indexSceeen;
+          });
+        },
+        child: xicon);
   }
 }

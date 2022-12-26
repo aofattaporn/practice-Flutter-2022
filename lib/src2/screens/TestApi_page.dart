@@ -7,27 +7,6 @@ import 'package:test_flutter/src2/blocs/tester/tester_state.dart';
 
 import '../data/models/test_model.dart';
 
-// class TestApi_page extends StatelessWidget {
-//   const TestApi_page({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: Container(
-//         child: BlocListener(
-//           builder: (context) {
-//             return BlocBuilder<TesterBloc, TesterState>(
-//               builder: (context, state) => (
-//                   Text(state.toString())
-//               )
-//             );
-//           }, listener: (BuildContext context, state) {  },
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class TestApi_page extends StatefulWidget {
   const TestApi_page({Key? key}) : super(key: key);
 
@@ -54,7 +33,7 @@ class _TestApi_pageState extends State<TestApi_page> {
         } else if (state is TesterLoadedState) {
           return _buildCard(context, state.tester);
         } else {
-          return Text("esle");
+          return Text(state.props.toString());
         }
       }),
     );

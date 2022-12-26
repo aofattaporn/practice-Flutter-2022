@@ -7,8 +7,8 @@ class Profile_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-          // child: CovidPage()
-          ),
+        child: Text("Person page"),
+      ),
     );
   }
 }
