@@ -64,14 +64,14 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             children: [
               Row(
                 children: [
-                  Button_Page(0, const Icon(Icons.home)),
-                  Button_Page(1, const Icon(Icons.search)),
+                  Button_Page(0, Icons.home),
+                  Button_Page(1, Icons.search),
                 ],
               ),
               Row(
                 children: [
-                  Button_Page(2, const Icon(Icons.notifications)),
-                  Button_Page(3, const Icon(Icons.person)),
+                  Button_Page(2, Icons.notifications),
+                  Button_Page(3, Icons.person),
                 ],
               )
             ],
@@ -81,7 +81,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     );
   }
 
-  MaterialButton Button_Page(int indexSceeen, Widget xicon) {
+  MaterialButton Button_Page(int indexSceeen, IconData xicon) {
     return MaterialButton(
         onPressed: () {
           setState(() {
@@ -89,6 +89,9 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
             currentTab = indexSceeen;
           });
         },
-        child: xicon);
+        child: Icon(xicon,
+            color:
+                currentTab == indexSceeen ? kPrimaryColor : kTextColor,
+            size: 24));
   }
 }
